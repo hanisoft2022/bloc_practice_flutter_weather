@@ -11,3 +11,5 @@ class Location {
   final double latitude;
   final double longitude;
 }
+
+// for git commit
