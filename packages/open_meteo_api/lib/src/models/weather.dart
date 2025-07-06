@@ -1,3 +1,6 @@
+class Weather {
+  const Weather({required this.temperature, required this.weatherCode});
 
-// for git commit 
-// for git commit 
+  final double temperature;
+  final double weatherCode;
+}
