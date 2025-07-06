@@ -89,8 +89,8 @@ void main() {
         expect(
           actual,
           isA<Location>()
-              .having((l) => l.name, 'name', 'Chicago')
               .having((l) => l.id, 'id', 4887398)
+              .having((l) => l.name, 'name', 'Chicago')
               .having((l) => l.latitude, 'latitude', 41.85003)
               .having((l) => l.longitude, 'longitude', -87.65005),
         );
