@@ -20,13 +20,14 @@ class WeatherNotFoundFailure implements Exception {}
 /// Dart API Client which wraps the [Open Meteo API](https://open-meteo.com).
 /// {@endtemplate}
 class OpenMeteoApiClient {
+  final http.Client _httpClient;
+
   /// {@macro open_meteo_api_client}
   OpenMeteoApiClient({http.Client? httpClient}) : _httpClient = httpClient ?? http.Client();
 
-  static const _baseUrlWeather = 'api.open-meteo.com';
   static const _baseUrlGeocoding = 'geocoding-api.open-meteo.com';
 
-  final http.Client _httpClient;
+  static const _baseUrlWeather = 'api.open-meteo.com';
 
   /// Finds a [Location] `/v1/search/?name=(query)`.
   Future<Location> locationSearch(String query) async {
