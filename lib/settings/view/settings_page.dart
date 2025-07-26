@@ -15,15 +15,15 @@ class SettingsPage extends StatelessWidget {
       appBar: AppBar(title: const Text('Settings')),
       body: ListView(
         children: <Widget>[
-          BlocBuilder<WeatherCubit, WeatherState>(
-            buildWhen: (previous, current) => previous.temperatureUnits != current.temperatureUnits,
-            builder: (context, state) {
+          BlocSelector<WeatherCubit, WeatherState, TemperatureUnits>(
+            selector: (state) => state.temperatureUnits,
+            builder: (context, temperatureUnits) {
               return ListTile(
                 title: const Text('Temperature Units'),
                 isThreeLine: true,
                 subtitle: const Text('Use metric measurements for temperature units.'),
                 trailing: Switch(
-                  value: state.temperatureUnits.isCelsius,
+                  value: temperatureUnits.isCelsius,
                   onChanged: (_) => context.read<WeatherCubit>().toggleUnits(),
                 ),
               );

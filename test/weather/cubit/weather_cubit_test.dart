@@ -27,10 +27,10 @@ void main() {
     setUp(() async {
       weather = MockWeather();
       weatherRepository = MockWeatherRepository();
+      when(() => weatherRepository.getWeather(any())).thenAnswer((_) async => weather);
       when(() => weather.condition).thenReturn(weatherCondition);
       when(() => weather.location).thenReturn(weatherLocation);
       when(() => weather.temperature).thenReturn(weatherTemperature);
-      when(() => weatherRepository.getWeather(any())).thenAnswer((_) async => weather);
       weatherCubit = WeatherCubit(weatherRepository);
     });
 
