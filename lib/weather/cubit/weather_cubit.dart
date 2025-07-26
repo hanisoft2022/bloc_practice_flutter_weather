@@ -7,6 +7,11 @@ import 'package:weather_repository/weather_repository.dart' show WeatherReposito
 part 'weather_cubit.g.dart';
 part 'weather_state.dart';
 
+extension TemperatureConversion on double {
+  double toFahrenheit() => (this * 9 / 5) + 32;
+  double toCelsius() => (this - 32) * 5 / 9;
+}
+
 class WeatherCubit extends HydratedCubit<WeatherState> {
   final WeatherRepository _weatherRepository;
 
@@ -22,7 +27,7 @@ class WeatherCubit extends HydratedCubit<WeatherState> {
       final units = state.temperatureUnits;
       final value = units.isFahrenheit
           ? weather.temperature.value.toFahrenheit()
-          : weather.temperature.value;
+          : weather.temperature.value.toCelsius();
 
       emit(
         state.copyWith(
@@ -90,9 +95,4 @@ class WeatherCubit extends HydratedCubit<WeatherState> {
 
   @override
   Map<String, dynamic> toJson(WeatherState state) => state.toJson();
-}
-
-extension TemperatureConversion on double {
-  double toFahrenheit() => (this * 9 / 5) + 32;
-  double toCelsius() => (this - 32) * 5 / 9;
 }

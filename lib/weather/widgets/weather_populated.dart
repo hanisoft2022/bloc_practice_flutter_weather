@@ -3,16 +3,16 @@ import 'package:flutter_weather/weather/weather.dart';
 import 'package:weather_repository/weather_repository.dart' show WeatherCondition;
 
 class WeatherPopulated extends StatelessWidget {
+  final Weather weather;
+  final TemperatureUnits units;
+  final ValueGetter<Future<void>> onRefresh;
+
   const WeatherPopulated({
     required this.weather,
     required this.units,
     required this.onRefresh,
     super.key,
   });
-
-  final Weather weather;
-  final TemperatureUnits units;
-  final ValueGetter<Future<void>> onRefresh;
 
   @override
   Widget build(BuildContext context) {

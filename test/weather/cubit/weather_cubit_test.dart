@@ -8,8 +8,8 @@ import 'package:weather_repository/weather_repository.dart' hide Weather;
 
 import '../../helpers/hydrated_bloc.dart';
 
-const weatherLocation = 'London';
 const weatherCondition = weather_repository.WeatherCondition.rainy;
+const weatherLocation = 'London';
 const weatherTemperature = 9.8;
 
 class MockWeatherRepository extends Mock implements weather_repository.WeatherRepository {}

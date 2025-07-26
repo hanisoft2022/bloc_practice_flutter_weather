@@ -7,7 +7,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_weather/search/search.dart';
 import 'package:flutter_weather/settings/settings.dart';
 import 'package:flutter_weather/weather/weather.dart';
-import 'package:flutter_weather/weather/widgets/widgets.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:weather_repository/weather_repository.dart' hide Weather;
 

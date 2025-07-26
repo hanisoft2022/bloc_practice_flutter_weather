@@ -4,8 +4,6 @@ import 'package:flutter_weather/search/search.dart';
 import 'package:flutter_weather/settings/settings.dart';
 import 'package:flutter_weather/weather/weather.dart';
 
-import '../widgets/widgets.dart';
-
 class WeatherPage extends StatelessWidget {
   const WeatherPage({super.key});
 
