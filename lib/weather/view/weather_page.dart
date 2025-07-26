@@ -27,8 +27,8 @@ class WeatherPage extends StatelessWidget {
               WeatherStatus.loading => const WeatherLoading(),
               WeatherStatus.failure => const WeatherError(),
               WeatherStatus.success => WeatherPopulated(
-                weather: state.weather,
-                units: state.temperatureUnits,
+                // weather: state.weather,
+                // units: state.temperatureUnits,
                 // onRefresh: () {
                 //   return context.read<WeatherCubit>().refreshWeather();
                 // },
