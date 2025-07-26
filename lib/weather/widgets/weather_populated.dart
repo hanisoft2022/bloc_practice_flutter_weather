@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_weather/weather/weather.dart';
 import 'package:weather_repository/weather_repository.dart' show WeatherCondition;
 
 class WeatherPopulated extends StatelessWidget {
   final Weather weather;
   final TemperatureUnits units;
-  final ValueGetter<Future<void>> onRefresh;
+  // final ValueGetter<Future<void>> onRefresh;
 
   const WeatherPopulated({
     required this.weather,
     required this.units,
-    required this.onRefresh,
+    // required this.onRefresh,
     super.key,
   });
 
@@ -21,7 +22,9 @@ class WeatherPopulated extends StatelessWidget {
       children: [
         _WeatherBackground(),
         RefreshIndicator(
-          onRefresh: onRefresh,
+          onRefresh: () {
+            return context.read<WeatherCubit>().refreshWeather();
+          },
           child: Align(
             alignment: const Alignment(0, -1 / 3),
             child: SingleChildScrollView(

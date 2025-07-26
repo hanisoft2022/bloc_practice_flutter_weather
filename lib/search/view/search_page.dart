@@ -30,7 +30,7 @@ class _SearchPageState extends State<SearchPage> {
         children: [
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.only(left: 30),
               child: TextField(
                 controller: _textController,
                 decoration: const InputDecoration(labelText: 'City', hintText: 'Chicago'),
